@@ -1,9 +1,17 @@
-<input type="text" [(ngModel)]="searchInput" autofocus>
-<button
-    type="submit" class="btn btn-primary"
-    (click)="clickOnSearch()"
->
-    Search
-</button>
+<div class="row mt-5">
+    <input type="text"
+        class="col-10"
+        [(ngModel)]="searchInput"
+        placeholder="Inserer un numéro SIRER ou un nom d'entreprise"
+        autofocus
+    >
+    <button
+        type="submit" 
+        class="btn btn-primary col"
+        (click)="clickOnSearch()"
+    >
+        Search
+    </button>
+</div>
 <br/>
 <app-entreprise-item *ngFor="let entreprise of entreprises" [entreprise]="entreprise"></app-entreprise-item>
