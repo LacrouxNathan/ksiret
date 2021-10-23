@@ -1,0 +1,9 @@
+<input type="text" [(ngModel)]="searchInput" autofocus>
+<button
+    type="submit" class="btn btn-primary"
+    (click)="clickOnSearch()"
+>
+    Search
+</button>
+<br/>
+<app-entreprise-item *ngFor="let entreprise of entreprises" [entreprise]="entreprise"></app-entreprise-item>

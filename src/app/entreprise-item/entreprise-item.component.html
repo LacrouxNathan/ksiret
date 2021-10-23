@@ -1,0 +1,59 @@
+<div class="container border">
+    <div class="media">
+        <img class="mr-3" src="../../assets/headear_logo.png" alt="Header image">
+        <div class="media-body">
+            <p class="name">{{entreprise.nom_raison_sociale}}</p>
+            <p class="siret">{{formatedSiret}}</p>
+            <p class="ville">{{entreprise.code_postal}} {{entreprise.libelle_commune}}</p>
+            <button class="btn btn-primary more" type="button" (click)="moreClick()">
+                En savoir plus
+            </button>
+        </div>
+    </div>
+    <div class="row mt-5" *ngIf='showMore' #more>
+        <div class="col-sm">
+            <h3>Etablissement</h3>
+            <div>
+                <label>Nom:</label>
+                {{entreprise.nom_raison_sociale}}
+            </div>
+            <div>
+                <p>
+                    <label>Addresse:</label>
+                    <br>
+                    {{entreprise.numero_voie}}
+                    {{entreprise.type_voie}}
+                    {{entreprise.libelle_voie}}
+                    <br>
+                    {{entreprise.code_postal}}
+                    {{entreprise.libelle_commune}}
+                </p>
+            </div>
+        </div>
+        <div class="col-sm">
+            <h3>Informations légales</h3>
+            <div>
+                <label>SIRET:</label>
+                {{entreprise.siret}}
+            </div>
+            <div>
+                <p>
+                    <label>Activité:</label>
+                    <br>
+                    {{entreprise.libelle_activite_principale}}
+                </p>
+            </div>
+            <div>
+                <p>
+                    <label>Nature juridique:</label>
+                    <br>
+                    {{entreprise.libelle_nature_juridique_entreprise}}
+                </p>
+            </div>
+            <div>
+                <label>Date de creation:</label>
+                {{formatedDate}}
+            </div>
+        </div>
+    </div>
+</div>
