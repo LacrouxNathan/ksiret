@@ -1,17 +1,4 @@
-.entreprise-item-div {
-    border: 1px solid black;
-    margin-bottom: 10px;
-}
-
-.floating_div {
-    width: 50%;
-    float: left;
-}
-
-.ville {
-    display: inline-block;
-}
-
-.more {
-    float: right;
+label {
+    font-weight: bold;
+    color: #b80909;
 }

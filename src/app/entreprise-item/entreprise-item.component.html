@@ -2,10 +2,10 @@
     <div class="media">
         <img class="mr-3" src="../../assets/headear_logo.png" alt="Header image">
         <div class="media-body">
-            <p class="name">{{entreprise.nom_raison_sociale}}</p>
-            <p class="siret">{{formatedSiret}}</p>
-            <p class="ville">{{entreprise.code_postal}} {{entreprise.libelle_commune}}</p>
-            <button class="btn btn-primary more" type="button" (click)="moreClick()">
+            <p>{{entreprise.nom_raison_sociale}}</p>
+            <p>{{formatedSiret}}</p>
+            <p>{{entreprise.code_postal}} {{entreprise.libelle_commune}}</p>
+            <button class="btn btn-primary float-right mb-2" type="button" (click)="moreClick()">
                 En savoir plus
             </button>
         </div>
@@ -37,6 +37,10 @@
                 {{entreprise.siret}}
             </div>
             <div>
+                <label>Date de creation:</label>
+                {{formatedDate}}
+            </div>
+            <div>
                 <p>
                     <label>Activité:</label>
                     <br>
@@ -49,10 +53,6 @@
                     <br>
                     {{entreprise.libelle_nature_juridique_entreprise}}
                 </p>
-            </div>
-            <div>
-                <label>Date de creation:</label>
-                {{formatedDate}}
             </div>
         </div>
     </div>
