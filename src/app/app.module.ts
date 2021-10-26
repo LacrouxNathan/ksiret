@@ -11,7 +11,6 @@ import { EntrepriseItemComponent } from './entreprise-item/entreprise-item.compo
 
 const appRoutes: Routes = [
   { path: 'search', component: SiretResearcherComponent},
-  { path: 'search/:search/:pagenb', component: SiretResearcherComponent},
   { path: '', redirectTo: '/search', pathMatch: 'full'}
 ];
 
@@ -27,8 +26,7 @@ const appRoutes: Routes = [
     NgbModule,
     FormsModule,
     RouterModule.forRoot(
-      appRoutes,
-      { enableTracing: true }
+      appRoutes
     )
   ],
   providers: [],
