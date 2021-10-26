@@ -1,12 +1,19 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { SiretResearcherComponent } from './siret-researcher/siret-researcher.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { EntrepriseItemComponent } from './entreprise-item/entreprise-item.component';
+
+const appRoutes: Routes = [
+  { path: 'search', component: SiretResearcherComponent},
+  { path: 'search/:search/:pagenb', component: SiretResearcherComponent},
+  { path: '', redirectTo: '/search', pathMatch: 'full'}
+];
 
 @NgModule({
   declarations: [
@@ -18,7 +25,11 @@ import { EntrepriseItemComponent } from './entreprise-item/entreprise-item.compo
     BrowserModule,
     HttpClientModule,
     NgbModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(
+      appRoutes,
+      { enableTracing: true }
+    )
   ],
   providers: [],
   bootstrap: [AppComponent]

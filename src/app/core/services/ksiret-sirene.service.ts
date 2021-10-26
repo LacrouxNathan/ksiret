@@ -12,8 +12,8 @@ export class KsiretSireneService {
 
   constructor(private http: HttpClient) { }
 
-  searchEntreprise(searchString : string): Observable<SirenResult> {
-    let requestUrl = Api.apiUrl + searchString + Api.option;
+  searchEntreprise(searchString: string, nbPage: number): Observable<SirenResult> {
+    let requestUrl = Api.apiUrl + searchString + Api.option + nbPage;
     return this.http.get<SirenResult>(requestUrl)
   }
 }
